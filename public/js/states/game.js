@@ -8,10 +8,14 @@
   //player 2
   {x:600, y: 100}
   ];
+
+
+
 //class constructor
 boxJam.Game = function(){
   this.player_1;
   this.player_2;
+  
 };
 
 boxJam.Game.prototype.create = function(){
@@ -28,6 +32,14 @@ boxJam.Game.prototype.create = function(){
 };
 
 boxJam.Game.prototype.update = function(){
+  //set facing direction
+  if(this.player_1.x < this.player_2.x){
+    this.player_1.facing = boxJam.Player.FACING.RIGHT;
+    this.player_2.facing = boxJam.Player.FACING.LEFT;
+  } else {
+    this.player_1.facing = boxJam.Player.FACING.Left;
+    this.player_2.facing = boxJam.Player.FACING.RIGHT;
+  }
 
 };
 
